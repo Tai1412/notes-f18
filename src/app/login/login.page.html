@@ -4,7 +4,7 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      Home
+      Login
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,7 +13,7 @@
   <ion-list lines="none">
     <ion-list-header>
       <ion-label>
-        <h1>Sign Up</h1>
+        <h1>Sign In</h1>
       </ion-label>
     </ion-list-header>
     <ion-item>
@@ -24,9 +24,12 @@
       <ion-label position="stacked"> Password</ion-label>
       <ion-input type="password" placeholder="minimum 6 characters"  name="password" [(ngModel)]="password"></ion-input>
     </ion-item>
-    <ion-button (click)="signUp()">Sign up</ion-button>
+    <ion-button (click)="signIn()" >Sign In</ion-button>
     <ion-item>
-      <p>Already have the accont? <a routerLink="/login"> Sign In </a></p>
+      <p>Already have the accont? <a routerLink="/home"> Sign Up </a></p>
+    </ion-item>
+    <ion-item >
+      <ion-button (click)="signOut()" >Sign Out</ion-button>
     </ion-item>
   </ion-list>
 </ion-content>
