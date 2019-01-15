@@ -16,15 +16,20 @@
         <h1>Sign Up</h1>
       </ion-label>
     </ion-list-header>
-    <ion-item>
-      <ion-label position="stacked"> Email</ion-label>
-      <ion-input type="email" placeholder="you@domain.com" name="email" [(ngModel)]="email"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="stacked"> Password</ion-label>
-      <ion-input type="password" placeholder="minimum 6 characters"  name="password" [(ngModel)]="password"></ion-input>
-    </ion-item>
-    <ion-button (click)="signUp()">Sign up</ion-button>
+    <form [formGroup]="signUpForm" (submit) = "signUp(signUpForm.value)">
+      <ion-item>
+        <ion-label position="stacked"> Email</ion-label>
+        <ion-input type="email" placeholder="you@domain.com" name="email" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked"> Password</ion-label>
+        <ion-input type="password" placeholder="minimum 6 characters"  name="password" formControlName="password" ></ion-input>
+      </ion-item>
+
+      <ion-button type="submit" [disabled]="!signUpForm.controls.email.valid || !signUpForm.controls.password.valid">Sign up</ion-button>  
+      <!-- Check if email and password is valid so the button is enable -->
+    </form>
+    
     <ion-item>
       <p>Already have the accont? <a routerLink="/login"> Sign In </a></p>
     </ion-item>

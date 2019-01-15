@@ -16,7 +16,12 @@ const routes: Routes = [
     loadChildren: './list/list.module#ListPageModule'
   },
   { path: 'login', 
-  loadChildren: './login/login.module#LoginPageModule' }
+  loadChildren: './login/login.module#LoginPageModule' },
+  {
+    path:'signup',
+    redirectTo:'home',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({
